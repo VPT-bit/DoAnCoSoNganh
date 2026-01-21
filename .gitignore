@@ -40,5 +40,6 @@ ENV/
 
 # Project specific
 artifacts/*
-custom_packages/*
-models/*
+!artifacts/.placeholder
+custom_packages/*.whl
+models/*.gguf

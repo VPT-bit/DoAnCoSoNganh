@@ -39,9 +39,6 @@ ENV/
 .env.local
 
 # Project specific
-uploads/
-document_store/
-history/
-artifacts/
-custom_packages/
-models/
+artifacts/*
+custom_packages/*
+models/*

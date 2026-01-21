@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chatbot</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@32,400,0,0" />
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+    <div class="app-layout">
+        <!-- Sidebar - Documents Panel -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <span class="material-symbols-rounded">folder_open</span>
+                <span>Tài liệu</span>
+                <button id="toggle-sidebar-btn" class="material-symbols-rounded">chevron_left</button>
+            </div>
+            <div class="documents-list" id="documents-list">
+                <!-- Documents will be loaded here -->
+            </div>
+        </aside>
+        
+        <!-- Main Chat Area -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Chats -->
+                <div class="chats-container"></div>
+                
+                <!-- Prompt Input -->
+                <div class="prompt-container">
+                    <div class="prompt-wrapper">
+                        <form id="prompt-form" class="prompt-form">
+                            <input type="text" placeholder="Nhập tin nhắn..." id="prompt-input" class="prompt-input" required />
+                            <div class="prompt-actions">
+                                <!-- File Upload Wrapper -->
+                                <div class="file-upload-wrapper">
+                                    <img src="#" class="file-preview" />
+                                    <input id="file-input" type="file" accept=".pdf,.docx" hidden />
+                                    <button type="button" class="file-icon material-symbols-rounded">description</button>
+                                    <button id="cancel-file-btn" type="button" class="material-symbols-rounded">close</button>
+                                    <button id="add-file-btn" type="button"
+                                        class="material-symbols-rounded">attach_file</button>
+                                </div>
+                                <!-- Send Prompt and Stop Response Buttons -->
+                                <button id="stop-response-btn" type="button"
+                                    class="material-symbols-rounded">stop_circle</button>
+                                <button id="send-prompt-btn" class="material-symbols-rounded">arrow_upward</button>
+                            </div>
+                        </form>
+                        <!-- Theme and Delete Chats Buttons -->
+                        <button id="theme-toggle-btn" class="material-symbols-rounded">light_mode</button>
+                        <button id="delete-chats-btn" class="material-symbols-rounded">delete</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+[project]
+name = "chatbot"
+version = "2.0.0"
+description = "RAG-based AI Chatbot with hybrid search"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "torch",
+    "torchvision",
+    "torchaudio",
+    "docling",
+    "bm25s",
+    "numpy",
+    "fastapi[standard]",
+    "llama-cpp-python",
+]
+
+[project.scripts]
+chatbot = "src.main:app"
+
+[tool.uv]
+index-strategy = "unsafe-best-match"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+torchaudio = { index = "pytorch-cu130" }
+llama-cpp-python = { path="./custom_packages/llama_cpp_python-0.3.20-cp313-cp313-win_amd64.whl" }
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
